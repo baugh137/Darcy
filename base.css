@@ -1,0 +1,18 @@
+/*base css  */
+h4 {
+	color:#006306;
+	font-family:'Cedarville Cursive', cursive;
+	
+}
+h3 {
+	color: #050358;
+	font-family:'Dancing Script', cursive;
+}
+
+p {
+	font-family: 'Caveat', cursive;
+}
+
+.navbar navbar-inverse{
+	background-color: 050358;
+}
