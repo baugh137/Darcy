@@ -14,7 +14,7 @@ $p4 = new dogtector("Mansfield Park", "Bluetick Coonhound");
 
 $p5 = new dogtector("Northanger Abbey", );
 
-$p6 = new dogtector("Legally Blonde Platinum Collection", "2 disc set", 392, 10.00);
+$p6 = new dogtector("Persuasion",);
 
 
 
