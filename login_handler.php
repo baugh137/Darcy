@@ -15,7 +15,7 @@ session_start();
 		$bad = true;
 	}
 	
-	if (!preg_match('~[0-9]~', $password)||!preg_match('~A-Z]~', $password)){
+	if (!preg_match('~[0-9]~', $password)||!preg_match('~[A-Z]~', $password)){
 	$_SESSION['messages'][] = "Password must have at least one number and one uppercase letter.";
 	$bad=true;
 	}
