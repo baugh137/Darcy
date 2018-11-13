@@ -4,7 +4,7 @@ session_start();
   $password = $_POST['password'];
   
   $_SESSION['presets']['username'] = $username;
-  
+  $bad = false;
   if (empty($username)) {
 	$_SESSION['messages'][] = "Username is required";
 	$bad = true;
