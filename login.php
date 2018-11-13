@@ -37,8 +37,7 @@ unset($_SESSION['message']);
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 </div>
 <div id="id01" class="modal">
-  
-  <form class="modal-content animate" method=POST action="login_handler.php">
+  <form class="modal-content animate" method="POST" action="login_handler.php">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="images/Logo.jpg" alt="Darcy Approved, Collin Detected Logo" class="avatar">
