@@ -11,8 +11,46 @@ h3 {
 
 p {
 	font-family: 'Caveat', cursive;
+	font-size: 31px;
+	margin: 10px;
 }
 
-.navbar navbar-inverse{
-	background-color: 050358;
+.page-header{
+	
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	
+}
+
+.container{
+	width: 100%;
+}
+
+
+img {
+	float: left;
+}
+
+img .page-header{
+	float: left;
+	margin: 5px;
+}
+
+a {
+	float: left;
+}
+
+body{
+	margin: 3px;
+}
+
+.images_construct{
+	float: left;
+}
+		
+.text_body{
+	float: left;
+	padding-bottom: 5px;
+
 }

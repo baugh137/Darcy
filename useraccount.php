@@ -11,7 +11,7 @@ Denise Baugh - CS 401
    
 		<link href="https://fonts.googleapis.com/css?family=Acme|Caveat|Cedarville+Cursive|Dancing+Script|Great+Vibes" rel="stylesheet" type='text/css'>
         
-       <link href="useraccount.css" rel="stylesheet">
+       <link href="base.css" rel="stylesheet">
 	 
     </head>	  
 
@@ -32,7 +32,7 @@ User password:<br>
   
   
 <div class="userImg">
-<img src="Images/odious-mr-collins.jpg" alt="user image" width="100" height="75">
+<img src="images/mcollins.jpg" alt="user image" width="100" height="75">
 </div>
 
 <div class="interests">
@@ -48,7 +48,11 @@ Your Interest<br>
   </form>
 </div>
 
+<?php include "comment.php"; ?>
+<!--
+
 <div class="userComments">
+
 <form action ="">
 Your Comments:<br>
 <input type="text" name="usercomments"><br>
@@ -56,7 +60,7 @@ Your Comments:<br>
   <input type="reset">
   </form>
 </div>
- 
+ -->
         
  <?php include "footer.php"; ?> 
 

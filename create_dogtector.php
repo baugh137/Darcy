@@ -25,3 +25,5 @@ file_put_contents("products.txt", serialize($p2) . "\n", FILE_APPEND | LOCK_EX);
 file_put_contents("products.txt", serialize($p3) . "\n", FILE_APPEND | LOCK_EX);
 
 file_put_contents("products.txt", serialize($p4) . "\n", FILE_APPEND | LOCK_EX);
+
+?>
