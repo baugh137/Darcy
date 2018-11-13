@@ -21,7 +21,7 @@ session_start();
 	}
 	
 	if($bad){
-		header('Location: index.php');
+		header('Location: login.php');
 		exit;
 	}
 	
