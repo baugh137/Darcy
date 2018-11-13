@@ -45,8 +45,7 @@ unset($_SESSION['message']);
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username']:''; ?>
-
+      <input type="text" placeholder="Enter Username" name="uname" required value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username']:''; ?>"
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
