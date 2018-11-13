@@ -39,19 +39,19 @@ session_start();
 		}else{
 			$_SESSION['messages'][]="That username already exists";
 			$_SESSION['logged_in']=false;
-			header('Location: index.php');
+			header('Location: login.php');
 			exit;
 		}
 	}else if (isset($_POST['LoginButton'])){
 		$login=$dao->getUserPassword($username, $password);
-		if($login){
+		if(!empty($login)){
 			$_SESSION['logged_in']=true;
 			header('Location: homepage.php');
 			exit;
 		}else{
 			$_SESSION['messages'][]="Username or Password is incorrect.";
 			$_SESSION['logged_in']=false;
-			header('Location: index.php');
+			header('Location: login.php');
 			exit;
 		}
 	}
