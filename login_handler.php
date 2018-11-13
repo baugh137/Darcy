@@ -27,8 +27,9 @@ session_start();
 	
 	require_once 'Dao.php';
 	  
-	  
+	  echo "here ";
 	 $dao = new DAO();
+	 echo "here ";
 	if(isset($_POST['CreateButton'])){
 		$user=$dao->getUsername($username);
 		if(empty($user)){
@@ -43,6 +44,7 @@ session_start();
 			exit;
 		}
 	}else if (isset($_POST['LoginButton'])){
+		echo "here ";
 		$login=$dao->getUserPassword($username, $password);
 		if(!empty($login)){
 			$_SESSION['logged_in']=true;
@@ -55,7 +57,7 @@ session_start();
 			exit;
 		}
 	}
-	
+	echo "here ";
 	unset($_SESSION['presets']);
 
   exit;
