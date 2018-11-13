@@ -46,7 +46,7 @@ $userpurchase = $dao->getUserpurchase();
 </div>
 		<?php
 			foreach ($userpurchase as $userpurchase) {
-			($userpurchasedog['Scottish Deerhound Dog from Pride and Prejudice'])
+			($userpurchasedog['Scottish Deerhound Dog from Pride and Prejudice']);
 			}
 		?>
 	
