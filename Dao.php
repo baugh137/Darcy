@@ -1,8 +1,8 @@
 <?php class	Dao	{	
 	private	$host	=	"us-cdbr-iron-east-01.cleardb.net";	
-	private	$db	=	"heroku_837703171d51974";	
-	private	$user	=	"bd6f823249df29";	
-	private	$pass	=	"8537aaf0";	
+	private	$db	=	"heroku_7cdbe1bf81924d3";	
+	private	$user	=	"b26424bae95fee";	
+	private	$pass	=	"e5cc47ad";	
 	
 	public	function getConnection() {			
 	new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
