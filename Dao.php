@@ -4,27 +4,38 @@
 	private	$user	=	"b26424bae95fee";	
 	private	$pass	=	"e5cc47ad";	
 	
+	public function __construct(){
+	}
+	
 	public	function getConnection() {			
-	new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
+	return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
 	}
 	
 	
-	public function saveLogin($name, $pass){
+	public function saveLogin($username, $userpassword){
 		$conn=$this->getConnection();
-		$saveQuery = 
-			"INSERT INTO user (username, userpassword) VALUES (:username, :userpassword)";
+		$q = "INSERT INTO user (username, userpassword) VALUES (:username, :userpassword)";
 		$q=$conn->prepare($saveQuery);
-		$q->bindParam(":username", $name);
-		$q->bindParam(":userpassword", $pass);
+		$q->bindParam(":username", $username);
+		$q->bindParam(":userpassword", $userpassword);
 		$q->execute();
 	
 	}
 	
-	//get username
-public function getUsername($name){
+	public function addUser($username, $userpassword){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT username FROM user WHERE username='$name'");
-		$q->bindParam(":username", $name);
+		$saveQuery = $conn->prepare(
+			"INSERT INTO users (username, password) VALUES (:username, :password)");
+		$saveQuery->bindParam(":username", $username);
+		$saveQuery->bindParam(":userpassword", $userpassword);
+		$saveQuery->execute();
+  }
+	
+	//get username
+public function getUsername($username){
+		$conn=$this->getConnection();
+		$q=$conn->prepare("SELECT username FROM username WHERE username='$username'");
+		$q->bindParam(":username", $username);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();
@@ -32,11 +43,11 @@ public function getUsername($name){
 	}
 
 	//validation
-	public function getUserPassword($name, $pass){
+	public function getUserPassword($username, $userpassword){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT username FROM user WHERE username=:username and userpassword=:userpassword");
-		$q->bindParam(":username", $name);
-		$q->bindParam(":userpassword", $pass);
+		$q=$conn->prepare("SELECT username FROM username WHERE username=:username and userpassword=:userpassword");
+		$q->bindParam(":username", $username);
+		$q->bindParam(":userpassword", $userpassword);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();

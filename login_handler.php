@@ -30,7 +30,7 @@ session_start();
 	  
 	  echo "here ";
 
-	  $dao = new DAO();
+	 $dao = new DAO();
 	
 	echo "here ";
 	
@@ -48,11 +48,9 @@ session_start();
 			exit;
 		}
 	}else if (isset($_POST['LoginButton'])){
-		
 		echo "here ";
-		
 		$login=$dao->getUserPassword($username, $password);
-		if($login){
+		if(!empty($login)){
 			$_SESSION['logged_in']=true;
 			header('Location: homepage.php');
 			exit;
@@ -63,9 +61,7 @@ session_start();
 			exit;
 		}
 	}
-	
 	echo "here ";
-	
 	unset($_SESSION['presets']);
 
   exit;
