@@ -1,3 +1,3 @@
 <?php
-require_once 'homepage.php';
+require_once 'login.php';
 ?>

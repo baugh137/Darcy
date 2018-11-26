@@ -5,6 +5,7 @@ session_start();
   
   $_SESSION['presets']['username'] = $username;
   $bad = false;
+  
   if (empty($username)) {
 	$_SESSION['messages'][] = "Username is required";
 	$bad = true;
@@ -21,15 +22,18 @@ session_start();
 	}
 	
 	if($bad){
-		header('Location: login.php');
+		header('Location: index.php');
 		exit;
 	}
 	
 	require_once 'Dao.php';
 	  
 	  echo "here ";
-	 $dao = new DAO();
-	 echo "here ";
+
+	  $dao = new DAO();
+	
+	echo "here ";
+	
 	if(isset($_POST['CreateButton'])){
 		$user=$dao->getUsername($username);
 		if(empty($user)){
@@ -40,24 +44,28 @@ session_start();
 		}else{
 			$_SESSION['messages'][]="That username already exists";
 			$_SESSION['logged_in']=false;
-			header('Location: login.php');
+			header('Location: index.php');
 			exit;
 		}
 	}else if (isset($_POST['LoginButton'])){
+		
 		echo "here ";
+		
 		$login=$dao->getUserPassword($username, $password);
-		if(!empty($login)){
+		if($login){
 			$_SESSION['logged_in']=true;
 			header('Location: homepage.php');
 			exit;
 		}else{
 			$_SESSION['messages'][]="Username or Password is incorrect.";
 			$_SESSION['logged_in']=false;
-			header('Location: login.php');
+			header('Location: index.php');
 			exit;
 		}
 	}
+	
 	echo "here ";
+	
 	unset($_SESSION['presets']);
 
   exit;
