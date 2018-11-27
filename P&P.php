@@ -17,9 +17,8 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 		header('Location: index.php');
 		exit;
 	}
-require_once "Dao.php";
-$dao = new Dao();
-$userpurchase = $dao->getUserpurchase();
+require_once 'Dao.php';
+
 
 ?>
   	
@@ -45,6 +44,8 @@ $userpurchase = $dao->getUserpurchase();
 </div>	
 </div>
 		<?php
+		$dao = new Dao();
+$userpurchase = $dao->getUserpurchase();
 			foreach ($userpurchase as $userpurchase) {
 			($userpurchasedog['Scottish Deerhound Dog from Pride and Prejudice']);
 			}

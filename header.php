@@ -2,7 +2,14 @@
 <head>
 <link href ="" type="logo" rel="base"/>
 </head>
+  	<?php 
+		session_start();
+		if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+			header('Location: index.php');
+			exit;
+		}
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +75,7 @@
 		  <li><a href="pricingpage.php">Pricing</a></li>
         </ul>
       </li>
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
