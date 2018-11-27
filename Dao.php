@@ -34,7 +34,7 @@
 	//get username
 public function getUsername($username){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT username FROM username WHERE username='$username'");
+		$q=$conn->prepare("SELECT username FROM user WHERE username=:username");
 		$q->bindParam(":username", $username);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
@@ -57,7 +57,7 @@ public function getUsername($username){
 	//purchasing dog
 	public function getUserpurchase($dog, $cost){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT userpurchasedog, userpurchasecost FROM userpurchase WHERE userpurchasedog='$dog' and userpurchasecost='$cost'");
+		$q=$conn->prepare("SELECT userpurchasedog, userpurchasecost FROM userpurchase WHERE userpurchasedog=:dog and userpurchasecost=:cost");
 		$q->bindParam(":userpurchasedog", $dog);
 		$q->bindParam(":userpurchasecost", $cost);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
