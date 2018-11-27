@@ -28,19 +28,17 @@ session_start();
 	
 	require_once 'Dao.php';
 	  
-	  echo "here 1";
-	  exit;
 
 	 $dao = new DAO();
 	 
-	 //$dao->addUser();
+	// $dao->addUser($username, $userpassword);
 	
 	echo "here ";
 	
 	if(isset($_POST['CreateButton'])){
 		$user=$dao->getUsername($username);
 		if(empty($user)){
-			$dao->addUser($username, $password);
+			$dao->addUser($username, $userpassword);
 			$_SESSION['logged_in']=true;
 			header('Location: homepage.php');
 			exit;
