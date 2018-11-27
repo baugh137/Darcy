@@ -38,7 +38,7 @@ session_start();
 	if(isset($_POST['CreateButton'])){
 		$user=$dao->getUsername($username);
 		if(empty($user)){
-			$dao->addUser($username, $userpassword);
+			$dao->addUser($username, $password);
 			$_SESSION['logged_in']=true;
 			header('Location: homepage.php');
 			exit;
