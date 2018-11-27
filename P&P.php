@@ -9,16 +9,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link href="https://fonts.googleapis.com/css?family=Acme|Caveat|Cedarville+Cursive|Dancing+Script|Great+Vibes" rel="stylesheet" type="text/css">
-
-  
- <?php 
-	$thisPage = "dogpurchase";
-	session_start();
-	if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-		header('Location: index.php');
-		exit;
-	}
-?>
   	
 
 </head>
