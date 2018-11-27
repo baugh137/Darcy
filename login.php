@@ -51,7 +51,7 @@ unset($_SESSION['message']);
       <input type="password" placeholder="Enter Password" name="password" required>
         
       <button type="submit" value="Login" name="LoginButton">Login</button>
-	  <button type="submit" value="CreateAccount" name="CreateButton">Create Account</button>
+	  <button type="submit" value="CreateAccount" name="CreateButton">Create Account and Login</button>
 <!--      <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>  -->
