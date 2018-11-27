@@ -13,6 +13,10 @@
 		<div class="text_body">
 		<p>Congratulations!</p>
 		<p>You have selected
+		// $dogs = $dao->getDogs($user);
+		 
+		 //foreach to display
+		 
 		 
 		<?php
 		include checkout_handler.php
