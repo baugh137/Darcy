@@ -44,7 +44,7 @@
 	//validation
 	public function getUserPassword($username, $userpassword){
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT username FROM username WHERE username=:username and userpassword=:userpassword");
+		$q=$conn->prepare("SELECT username FROM user WHERE username=:username and userpassword=:userpassword");
 		$q->bindParam(":username", $username);
 		$q->bindParam(":userpassword", $userpassword);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
