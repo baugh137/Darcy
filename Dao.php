@@ -1,18 +1,17 @@
 <?php class	Dao	{	
-	private	$host	=	"us-cdbr-iron-east-01.cleardb.net";	
-	private	$db	=	"heroku_7cdbe1bf81924d3";	
-	private	$user	=	"b26424bae95fee";	
-	private	$pass	=	"e5cc47ad";	
+	private	$host = "us-cdbr-iron-east-01.cleardb.net";	
+	private	$db	= "heroku_7cdbe1bf81924d3";	
+	private	$user =	"b26424bae95fee";	
+	private	$pass =	"e5cc47ad";	
 	
-	public function __construct(){
-	}
+	
 	
 	public	function getConnection() {			
 	return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
 	}
 	
 	
-	public function saveLogin($username, $userpassword){
+	/*public function saveLogin($username, $userpassword){
 		$conn=$this->getConnection();
 		$q = "INSERT INTO user (username, userpassword) VALUES (:username, :userpassword)";
 		$q=$conn->prepare($saveQuery);
@@ -20,14 +19,14 @@
 		$q->bindParam(":userpassword", $userpassword);
 		$q->execute();
 	
-	}
+	}*/
 	
 	public function addUser($username, $userpassword){
 		$conn=$this->getConnection();
 		$saveQuery = $conn->prepare(
 			"INSERT INTO user (username, password) VALUES (:username, :password)");
 		$saveQuery->bindParam(":username", $username);
-		$saveQuery->bindParam(":userpassword", $userpassword);
+		$saveQuery->bindParam(":password", $userpassword);
 		$saveQuery->execute();
   }
 	
