@@ -39,6 +39,7 @@ session_start();
 		$user=$dao->getUsername($username);
 		if(empty($user)){
 			$dao->addUser($username, $password);
+			$_SESSION['username'] = $username;
 			$_SESSION['logged_in']=true;
 			header('Location: homepage.php');
 			exit;
@@ -53,6 +54,7 @@ session_start();
 		$login=$dao->getUserPassword($username, $password);
 		if(!empty($login)){
 			$_SESSION['logged_in']=true;
+			$_SESSION['username'] = $username;
 			header('Location: homepage.php');
 			exit;
 		}else{

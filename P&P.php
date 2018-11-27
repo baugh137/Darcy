@@ -39,17 +39,11 @@ require_once 'Dao.php';
 	<div class="takehome">
 <div class="container">
   <h2>Ready to take him home?</h2>
-  <a href="checkout.php" class="btn btn-info" role="button">Add to Basket</a>
+  <a href="addP&P.php" class="btn btn-info" role="button">Add to Basket</a>
   <!--<input type="submit" class="btn btn-info" value="Submit Button"> -->
 </div>	
 </div>
-		<?php
-		$dao = new Dao();
-$userpurchase = $dao->getUserpurchase();
-			foreach ($userpurchase as $userpurchase) {
-			($userpurchasedog['Scottish Deerhound Dog from Pride and Prejudice']);
-			}
-		?>
+	
 	
 		<?php include "footer.php"; ?>
  

@@ -10,3 +10,11 @@ CREATE TABLE user(
 
 INSERT INTO user(username, userpassword)
 VALUES('Dee', '123D');
+
+DROP TABLE IF EXISTS UserPurchase;
+
+CREATE TABLE UserPurchase(
+	username VARCHAR(128) NOT NULL,
+	dog VARCHAR(128) NOT NULL,
+	cost INT(128) NOT NULL
+);

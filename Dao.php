@@ -53,8 +53,19 @@
 		return $result;
 	}
 	
+	
+	public function addUserPurchase($username, $dog, $cost){
+		$conn=$this->getConnection();
+		$saveQuery = $conn->prepare(
+			"INSERT INTO UserPurchase (username, dog, cost) VALUES (:username, :dog, :cost)");
+		$saveQuery->bindParam(":username", $username);
+		$saveQuery->bindParam(":dog", $dog);
+		$saveQuery->bindParam(":cost",$cost);
+		$saveQuery->execute();
+  }
+	
 	//purchasing dog
-	public function getUserpurchase($dog, $cost){
+	public function getUserPurchase($dog, $cost){
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT userpurchasedog, userpurchasecost FROM userpurchase WHERE userpurchasedog=:dog and userpurchasecost=:cost");
 		$q->bindParam(":userpurchasedog", $dog);
