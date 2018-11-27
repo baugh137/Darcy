@@ -2,6 +2,6 @@
 session_start();
 unset($_SESSION['logged_in']);
 session_destroy();
-header('Location: Darcy/login.php');
+header('Location: index.php');
 exit;
 ?>
