@@ -28,9 +28,12 @@ session_start();
 	
 	require_once 'Dao.php';
 	  
-	  echo "here ";
+	  echo "here 1";
+	  exit;
 
 	 $dao = new DAO();
+	 
+	 //$dao->addUser();
 	
 	echo "here ";
 	

@@ -31,7 +31,7 @@
   }
 	
 	//get username
-public function getUsername($username){
+	public function getUsername($username){
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT username FROM user WHERE username=:username");
 		$q->bindParam(":username", $username);
