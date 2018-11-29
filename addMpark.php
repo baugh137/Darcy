@@ -7,7 +7,7 @@
 		require_once 'Dao.php';
 		$dao = new Dao();
 		$id = $_SESSION['username'];
-		$dog = 'Scottish Deerhound Dog from Pride and Prejudice';
+		$dog = 'Bluetick Coonhound Dog from Mansfield Park';
 		$cost = '$10';
 		$dao->addUserPurchase($id, $dog, $cost);
 		 	

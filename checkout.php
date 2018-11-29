@@ -10,14 +10,24 @@
 	</head>
 	<body>
 	<?php include "header.php"; ?>
+	<?php
+	session_start();
+		if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+			header('Location: index.php');
+			exit;
+		}
+		require_once 'Dao.php';
+		$dao = new Dao();
+		$id = $_SESSION['username'];
+		?>
 		<div class="text_body">
 		<p>Congratulations!</p>
 		<p>You have selected
-		// $dogs = $dao->getDogs($user);
+		<?php $dogs = $dao->getDogs($user);
 		 
 		 //foreach to display
 		 
-		 
+		 ?>
 		<?php
 		include checkout_handler.php
 		?>
