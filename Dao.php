@@ -79,10 +79,10 @@
 	//use in user account/FAQ - user purchase review
 	public function getComments($userName, $comments, $date) {
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT * FROM comments WHERE username='$userName' and comments='$comments' and commentsdate='$date' and userID='$userid'");
+		$q=$conn->prepare("SELECT * FROM comments WHERE username=:userName and comments=:comments and commentsdate=:date and userID=:userid");
 		$q->bindParam (":username", $userName);
 		$q->bindParam (":comments", $comments);
-		$q->bindParam (":commentsdate", $date);
+		$q->bindParam (":commentsDate", $date);
 		$q->bindParam (":userID", $userid);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
@@ -90,6 +90,12 @@
 		return $result;
 	}
 	
+/*	public function getComments () {
+    $this->log->LogDebug("Getting comments");
+    $conn = $this->getConnection();
+    return $conn->query("select id, image_path, name, comment, date_entered from comment order by date_entered desc", PDO::FETCH_ASSOC);
+  }
+*/	
 	  public function saveComment ($userName, $comment) {
     $this->log->LogInfo("Save comment [{$name}] [{$comment}]");
     $conn = $this->getConnection();

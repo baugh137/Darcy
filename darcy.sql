@@ -18,3 +18,13 @@ CREATE TABLE UserPurchase(
 	dog VARCHAR(128) NOT NULL,
 	cost VARCHAR(128) NOT NULL
 );
+
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE comments(
+	userID	INT auto_increment PRIMARY KEY,
+	username VARCHAR(128) NOT NULL,
+    userComment VARCHAR(300) NOT NULL,
+    commentsDate DATE NOT NULL
+);
+    
