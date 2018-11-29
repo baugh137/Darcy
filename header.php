@@ -40,7 +40,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Dogtectors<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="P&P.php">Pride and Prejudice</a></li>
-          <li><a href="Emma.php">Emma</a></li>
+          <li><a href="emma.php">Emma</a></li>
           <li><a href="S&S.php">Sense and Sensibility</a></li>
 		  <li><a href="mpark.php">Mansfield Park</a></li>
 		  <li><a href="nabbey.php">Northanger Abbey</a></li>
