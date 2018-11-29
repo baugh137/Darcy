@@ -66,7 +66,7 @@
       </li>
 	        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Basket<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="checkout.php">Checkout</a></li>
+         <!-- <li><a href="checkout.php">Checkout</a></li> -->
           <li><a href="useraccount.php">Account</a></li>
           <li><a href="privypoly.php">Privacy Policy</a></li>
 		  <li><a href="refundpoly.php">Refund Policy</a></li>
