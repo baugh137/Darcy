@@ -9,20 +9,6 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<link href="https://fonts.googleapis.com/css?family=Acme|Caveat|Cedarville+Cursive|Dancing+Script|Great+Vibes" rel="stylesheet" type="text/css">
-
-  
-  	<?php $thisPage = "dogpurchase";
-session_start();
-if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-		header('Location: index.php');
-		exit;
-	}
-require_once "Dao.php";
-$dao = new Dao();
-$userpurchase = $dao->getUserpurchase();
-
-?>
-
   
 	</head>
 	
@@ -41,13 +27,7 @@ $userpurchase = $dao->getUserpurchase();
   <a href="addNabbey.php" class="btn btn-info" role="button">Add to Basket</a>
   <!--<input type="submit" class="btn btn-info" value="Submit Button"> -->
 </div>	
-</div>
-		<?php
-			foreach ($userpurchase as $userpurchase) {
-			($userpurchasedog['Brittany Spaniel from Northanger Abbey'])
-			}
-		?>
-	
+</div>	
 		
 		<?php include "footer.php"; ?>
 	</body>

@@ -11,19 +11,6 @@
 
   	<link href="https://fonts.googleapis.com/css?family=Acme|Caveat|Cedarville+Cursive|Dancing+Script|Great+Vibes" rel="stylesheet" type="text/css">
 
-  
-  	<?php $thisPage = "dogpurchase";
-session_start();
-if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-		header('Location: index.php');
-		exit;
-	}
-require_once "Dao.php";
-$dao = new Dao();
-$userpurchase = $dao->getUserpurchase();
-
-?>
-
 	</head>
 	<body>
  		<?php include "header.php"; ?>
@@ -41,11 +28,6 @@ $userpurchase = $dao->getUserpurchase();
   <!--<input type="submit" class="btn btn-info" value="Submit Button"> -->
 </div>	
 </div>
-		<?php
-			foreach ($userpurchase as $userpurchase) {
-			($userpurchasedog['Akita Dog from Persuasion'])
-			}
-		?>
 	
 		<?php include "footer.php"; ?>
 	</body>
