@@ -19,18 +19,24 @@
 		require_once 'Dao.php';
 		$dao = new Dao();
 		$id = $_SESSION['username'];
+		$dogs = $dao->getDogs($user);
 		?>
 		<div class="text_body">
 		<p>Congratulations!</p>
 		<p>You have selected
-		<?php $dogs = $dao->getDogs($user);
-		 
-		 //foreach to display
-		 
+		<?php 
+		 foreach($userpurchasedog as $dog)
+		 {
+			 echo "htmlentities($dog['dog'].")
+		 }
+		 ?>  <br> He only costs 
+		 <?php
+		 echo "htmlentities $cost. "
 		 ?>
-		<?php
-		include checkout_handler.php
-		?>
+		 </p>
+		 
+		 
+		
 		<?php include "footer.php"; ?>
 	</body>
 </html>
