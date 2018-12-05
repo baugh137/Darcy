@@ -27,7 +27,7 @@
 		<p>Congratulations!</p>
 		<p>You have selected
 		<?php	
-			 echo $dog['userpurchasedog'];
+			 echo htmlentities $dog['userpurchasedog'];
 		 
 		 ?> 
 		 <br> He only costs 
