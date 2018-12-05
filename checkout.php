@@ -19,7 +19,7 @@
 		require_once 'Dao.php';
 		$dao = new Dao();
 		$username = $_SESSION['username'];
-		$dog = $dao->getUserPurchase($dog);
+		$dog = $dao->getUserPurchase($dog, $cost);
 		$cost = '$10';
 		?>
 		<div class="text_body">
