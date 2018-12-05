@@ -26,6 +26,7 @@ session_start();
 }
 require_once 'Dao.php';
 $dao = new Dao();
+
 $comments = $dao->getComments();
 ?>
 <body>
@@ -60,7 +61,6 @@ User password:<br>
       <input type="text" name="name" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>"><br>
 			Comment:<br>
 			<input type="text" name="comment" value="<?php echo isset($_SESSION['presets']['comment']) ? $_SESSION['presets']['comment'] : ''; ?>">
-      <input type="file" name="pic" accept="image/*"><br/>
       <input type="submit" value="Submit">
     </form>
 

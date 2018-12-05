@@ -24,10 +24,13 @@ if ($bad) {
 //validated
 $_SESSION['messages'][] = "Thanks for posting!";
 $_SESSION['validated'] = 'validated';
+
 unset($_SESSION['presets']);
+
 require_once 'Dao.php';
 $dao = new Dao();
 $dao->saveComment($username, $userComment);
+
 header('useraccount.php');
 exit;
 
