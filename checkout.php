@@ -25,10 +25,9 @@
 		<p>Congratulations!</p>
 		<p>You have selected
 		<?php 
-		 foreach($userpurchasedog as $dog)
-		 {
+		
 			 echo ". $dog['dog'].")
-		 }
+		 
 		 ?>  <br> He only costs 
 		 <?php
 		 echo ". $cost['cost']. "
