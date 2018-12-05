@@ -1,8 +1,18 @@
-<!DOCTYPE html>
 <html lang="en">
 <!--
 Denise Baugh - CS 401 
 -->
+<?php
+session_start();
+
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+  header('Location: login.php');
+  exit;
+}
+require_once 'Dao.php';
+$dao = new Dao();
+$comments = $dao->getComments();
+?>
      <head>
 		<title>Darcy Approved, Collins Detected: User Account</title>
              <meta charset="UTF-8">
@@ -33,9 +43,11 @@ User password:<br>
   
 <div class="userImg">
 <img src="images/mcollins.jpg" alt="user image" width="100" height="75">
+<h5>User Image</h5>
 </div>
 
 <?php include "comment.php"; ?>
+
 
 <div class="interests">
 <form>
