@@ -54,14 +54,11 @@ User password:<br>
   <h1>Comments</h1>
     <h2 id="subtitle">Leave a review</h2>
 
-<?php if (isset($_SESSION['messages'])) {
-  foreach ($_SESSION['messages'] as $message) {?>
-      <div class="message <?php echo isset($_SESSION['validated']) ? $_SESSION['validated'] : '';?>"><?php
-      echo $message; ?></div>
-<?php  }
- unset($_SESSION['messages']);
-?> </div>
-<?php } ?>
+<?php 
+session_start();
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
+unset($_SESSION['message']);
+?>
 
     <form method="post" action="comment_handler.php" enctype="multipart/form-data">
 			Name:<br>
@@ -74,8 +71,8 @@ User password:<br>
 
     <table>
 <?php
-    foreach ($comments as $comment) {
-      echo "<tr><td><img src='" . $comment['image_path'] . "'/></td><td>" . htmlentities($comment['name']) . "</td><td>{$comment['comment']}</td><td>{$comment['date_entered']}</td><td><a href='delete.php?id={$comment['userid']}'/>X</a></td></tr>";
+    foreach ($comments as $userComment) {
+      echo "<tr><td>" . htmlentities($comments['username']) . "</td><td>{$comments['userComment']}</td><td>{$comments['commentsDate']}</td><td><a href='delete.php?id={$comments['userID']}'/>X</a></td></tr>";
     }
 ?>
     </table>
