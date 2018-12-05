@@ -26,7 +26,7 @@
 		$dog = $dao->getUserPurchase();
 		$cost = '$10'; 
 		
-			 echo "<tr><td>". htmlentities($dog['userpurchasedog']."</td></tr>";
+			 echo $dog['userpurchasedog'];
 		 
 		 ?> 
 		 <br> He only costs 
