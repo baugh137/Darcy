@@ -10,6 +10,9 @@
 	</head>
 	<body>
 	<?php include "header.php"; ?>
+	<div class="text_body">
+		<p>Congratulations!</p>
+		<p>You have selected
 	<?php
 	session_start();
 		if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
@@ -20,12 +23,7 @@
 		$dao = new Dao();
 		$username = $_SESSION['username'];
 		$dog = $dao->getUserPurchase($dog, $cost);
-		$cost = '$10';
-		?>
-		<div class="text_body">
-		<p>Congratulations!</p>
-		<p>You have selected
-		<?php 
+		$cost = '$10'; 
 			
 			 echo $dog;
 		 
