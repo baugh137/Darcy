@@ -77,7 +77,7 @@
 	}
 
 	//use in user account/FAQ - user purchase review
-/*	public function getComments($userName, $comments, $date) {
+	public function getComments($userName, $comments, $date) {
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT * FROM comments WHERE username=:userName and comments=:comments and commentsdate=:date and userID=:userid");
 		$q->bindParam (":username", $userName);
@@ -89,14 +89,14 @@
 		$result=$q->fetchAll();
 		return $result;
 	}
-*/
-	
+
+/*	
 	public function getComments () {
     $this->log->LogDebug("Getting comments");
     $conn = $this->getConnection();
     return $conn->query("select userID, username, userComment, commentsDate from comments order by commentsDate desc", PDO::FETCH_ASSOC);
   }
-	
+*/	
 	  public function saveComment ($username, $userComment) {
     $this->log->LogInfo("Save comments [{$username}] [{$userComment}]");
     $conn = $this->getConnection();
