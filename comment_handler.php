@@ -1,9 +1,9 @@
 <?php
 session_start();
-$name = $_POST['username'];
-$comment = $_POST['comments'];
-$_SESSION['presets']['username'] = $name;
-$_SESSION['presets']['comments'] = $comments;
+$username = $_POST['username'];
+$userComment = $_POST['userComment'];
+$_SESSION['presets']['username'] = $username;
+$_SESSION['presets']['userComment'] = $userComment;
 
 $messages = array();
 $presets = array();
@@ -17,7 +17,7 @@ if (empty($comment)) {
   $bad = true;
 }
 if ($bad) {
-  header('Location: comments.php');
+  header('Location: comment.php');
   $_SESSION['validated'] = 'bad';
   exit;
 }
@@ -27,8 +27,8 @@ $_SESSION['validated'] = 'validated';
 unset($_SESSION['presets']);
 require_once 'Dao.php';
 $dao = new Dao();
-$dao->saveComment($name, $comment);
-header('homepage.php');
+$dao->saveComment($username, $userComment);
+header('useraccount.php');
 exit;
 
 ?>

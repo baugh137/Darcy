@@ -1,8 +1,8 @@
 <?php
-$userid = $_GET['userid'];
+$userID = $_GET['userID'];
 require_once 'Dao.php';
 $dao = new Dao();
-$dao->deleteComment($userid);
-header('Location: comments.php');
+$dao->deleteComment($userID);
+header('Location: comment.php');
 exit;
 ?>

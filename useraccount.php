@@ -18,7 +18,7 @@ Denise Baugh - CS 401
 <body>
     <?php include "header.php"; ?>  
 
-
+<!--
 <div class="userinfo">
 <form action="">
 User name:<br>
@@ -28,12 +28,14 @@ User password:<br>
 <input type="password" name="psw">
 </form>
 </div>
-
+-->
   
   
 <div class="userImg">
 <img src="images/mcollins.jpg" alt="user image" width="100" height="75">
 </div>
+
+<?php include "comment.php"; ?>
 
 <div class="interests">
 <form>

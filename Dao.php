@@ -3,13 +3,16 @@
 	private	$db	= "heroku_7cdbe1bf81924d3";	
 	private	$user =	"b26424bae95fee";	
 	private	$pass =	"e5cc47ad";	
-	
+	private $log;
 	
 	
 	public	function getConnection() {			
 	return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
 	}
 	
+	public function __construct() {
+		$this->log = new KLogger("log.txt", KLogger::INFO);
+	}
 	
 	/*public function saveLogin($username, $userpassword){
 		$conn=$this->getConnection();
@@ -77,7 +80,7 @@
 	}
 
 	//use in user account/FAQ - user purchase review
-	public function getComments($userName, $comments, $date) {
+/*	public function getComments($userName, $comments, $date) {
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT * FROM comments WHERE username=:userName and comments=:comments and commentsdate=:date and userID=:userid");
 		$q->bindParam (":username", $userName);
@@ -89,32 +92,33 @@
 		$result=$q->fetchAll();
 		return $result;
 	}
+*/
 	
-/*	public function getComments () {
+	public function getComments () {
     $this->log->LogDebug("Getting comments");
     $conn = $this->getConnection();
-    return $conn->query("select id, image_path, name, comment, date_entered from comment order by date_entered desc", PDO::FETCH_ASSOC);
+    return $conn->query("select userID, username, userComment, commentsDate from comments order by commentsDate desc", PDO::FETCH_ASSOC);
   }
-*/	
-	  public function saveComment ($userName, $comment) {
-    $this->log->LogInfo("Save comment [{$name}] [{$comment}]");
+	
+	  public function saveComment ($username, $userComment) {
+    $this->log->LogInfo("Save comments [{$username}] [{$userComment}]");
     $conn = $this->getConnection();
     $saveQuery =
         "INSERT INTO comments
-        (username, comments)
+        (username, userComment)
         VALUES
-        (:username, :comments)";
+        (:username, :userComment)";
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":username", $userName);
-    $q->bindParam(":comments", $comment);
+    $q->bindParam(":username", $username);
+    $q->bindParam(":userComment", $userComment);
     $q->execute();
   }
   
-  public function deleteComment ($userid) {
+  public function deleteComment ($userID) {
     $conn = $this->getConnection();
-    $saveQuery = "DELETE FROM comment WHERE userID = :userID";
+    $saveQuery = "DELETE FROM comments WHERE userID = :userID";
     $q = $conn->prepare($saveQuery);
-    $q->bindParam(":userID", $userid);
+    $q->bindParam(":userID", $userID);
     $q->execute();
   }
 
