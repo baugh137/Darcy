@@ -17,10 +17,10 @@ Denise Baugh - CS 401
 <?php
 session_start();
 
- if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-  header('Location: login.php');
-  exit;
-}
+ //if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+//  header('Location: login.php');
+//  exit;
+//}
 require_once 'Dao.php';
 $dao = new Dao();
 $comments = $dao->getComments();
