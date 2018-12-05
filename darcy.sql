@@ -14,6 +14,7 @@ VALUES('Dee', '123D');
 DROP TABLE IF EXISTS UserPurchase;
 
 CREATE TABLE UserPurchase(
+	userID	INT auto_increment PRIMARY KEY,
 	username VARCHAR(128) NOT NULL,
 	dog VARCHAR(128) NOT NULL,
 	cost VARCHAR(128) NOT NULL
