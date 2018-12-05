@@ -2,17 +2,7 @@
 <!--
 Denise Baugh - CS 401 
 -->
-<?php
-session_start();
 
-if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-  header('Location: login.php');
-  exit;
-}
-require_once 'Dao.php';
-$dao = new Dao();
-$comments = $dao->getComments();
-?>
      <head>
 		<title>Darcy Approved, Collins Detected: User Account</title>
              <meta charset="UTF-8">
@@ -24,7 +14,17 @@ $comments = $dao->getComments();
        <link href="base.css" rel="stylesheet">
 	 
     </head>	  
+<?php
+session_start();
 
+ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+  header('Location: login.php');
+  exit;
+}
+require_once 'Dao.php';
+$dao = new Dao();
+$comments = $dao->getComments();
+?>
 <body>
     <?php include "header.php"; ?>  
 
