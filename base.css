@@ -15,6 +15,14 @@ p {
 	margin: 10px;
 }
 
+h1 {
+	font-family: 'Cedarville Cursive', cursive;
+}
+
+h2 {
+	font-family: 'Caveat', cursive;	
+}
+
 .page-header{
 	
 	margin: 0;
