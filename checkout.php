@@ -20,18 +20,18 @@
 		$dao = new Dao();
 		$username = $_SESSION['username'];
 		$dog = $dao->getUserPurchase($dog);
-		
+		$cost = '$10';
 		?>
 		<div class="text_body">
 		<p>Congratulations!</p>
 		<p>You have selected
 		<?php 
 			
-			 echo $dog['dog'];
+			 echo $dog;
 		 
 		 ?>  <br> He only costs 
 		 <?php
-		 echo $dog['cost'];
+		 echo $cost;
 		 ?>
 		 </p>
 		 
