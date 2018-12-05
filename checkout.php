@@ -27,11 +27,11 @@
 		<?php 
 		 foreach($userpurchasedog as $dog)
 		 {
-			 echo "htmlentities($dog['dog'].")
+			 echo ". $dog['dog'].")
 		 }
 		 ?>  <br> He only costs 
 		 <?php
-		 echo "htmlentities $cost. "
+		 echo ". $cost['cost']. "
 		 ?>
 		 </p>
 		 
