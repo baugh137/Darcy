@@ -65,7 +65,7 @@
   }
 	
 	//purchasing dog
-	public function getUserPurchase(){
+	public function getUserPurchase($dog, $cost){
 		$conn=$this->getConnection();
 		$q=$conn->prepare("SELECT userpurchasedog, userpurchasecost FROM userpurchase WHERE userpurchasedog=:dog and userpurchasecost=:cost");
 		$q->bindParam(":userpurchasedog", $dog);

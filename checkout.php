@@ -19,19 +19,19 @@
 		require_once 'Dao.php';
 		$dao = new Dao();
 		$username = $_SESSION['username'];
-		$dog = $dao->getUserPurchase();
-		$cost = $dao->getUserPurchase();
+		$dog = $dao->getUserPurchase($dog);
+		
 		?>
 		<div class="text_body">
 		<p>Congratulations!</p>
 		<p>You have selected
 		<?php 
 			
-			 echo htmlentities($dog['dog']);
+			 echo ".htmlentities($dog['dog']).";
 		 
 		 ?>  <br> He only costs 
 		 <?php
-		 echo htmlentities($cost['cost']);
+		 echo ".htmlentities($dog['cost']).";
 		 ?>
 		 </p>
 		 
