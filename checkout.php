@@ -27,11 +27,11 @@
 		<p>You have selected
 		<?php 
 			
-			 echo ".htmlentities($dog['dog']).";
+			 echo ($dog['dog']);
 		 
 		 ?>  <br> He only costs 
 		 <?php
-		 echo ".htmlentities($dog['cost']).";
+		 echo ($dog['cost']);
 		 ?>
 		 </p>
 		 
