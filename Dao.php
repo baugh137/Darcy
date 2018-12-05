@@ -77,13 +77,13 @@
 	}
 
 	//use in user account/FAQ - user purchase review
-	public function getComments($userName, $comments, $date) {
+	public function getComments($username, $userComment, $commentsDate) {
 		$conn=$this->getConnection();
-		$q=$conn->prepare("SELECT * FROM comments WHERE username=:userName and comments=:comments and commentsdate=:date and userID=:userid");
-		$q->bindParam (":username", $userName);
-		$q->bindParam (":comments", $comments);
-		$q->bindParam (":commentsDate", $date);
-		$q->bindParam (":userID", $userid);
+		$q=$conn->prepare("SELECT * FROM comments WHERE username=:username and userComment=:userComment and commentsDate=:commentDate and userID=:userID");
+		$q->bindParam (":username", $username);
+		$q->bindParam (":userComment", $userComment);
+		$q->bindParam (":commentsDate", $commentsDate);
+		$q->bindParam (":userID", $userID);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		$q->execute();
 		$result=$q->fetchAll();

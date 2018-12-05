@@ -57,7 +57,7 @@ User password:<br>
 
     <form method="post" action="comment_handler.php" enctype="multipart/form-data">
 			Name:<br>
-      <input type="text" name="name" value="<?php echo isset($_SESSION['presets']['name']) ? $_SESSION['presets']['name'] : ''; ?>"><br>
+      <input type="text" name="name" value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>"><br>
 			Comment:<br>
 			<input type="text" name="comment" value="<?php echo isset($_SESSION['presets']['comment']) ? $_SESSION['presets']['comment'] : ''; ?>">
       <input type="file" name="pic" accept="image/*"><br/>
