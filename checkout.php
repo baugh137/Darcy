@@ -10,7 +10,10 @@
 	</head>
 	<body>
 	<?php include "header.php"; ?>
-
+	<div class="text_body">
+		<p>Congratulations!</p>
+		<p>You have selected
+			
 	<?php
 	session_start();
 		if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
@@ -20,14 +23,10 @@
 		require_once 'Dao.php';
 		$dao = new Dao();
 		$username = $_SESSION['username'];
-		$dog = $dao->getUserPurchase($dog, $cost);
+		$dog = $dao->getUserPurchase();
 		$cost = '$10'; 
-		?>
-			<div class="text_body">
-		<p>Congratulations!</p>
-		<p>You have selected
-		<?php	
-			 echo htmlentities $dog['userpurchasedog'];
+		
+			 echo $dog['userpurchasedog'];
 		 
 		 ?> 
 		 <br> He only costs 
