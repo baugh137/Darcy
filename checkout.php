@@ -19,8 +19,8 @@
 		require_once 'Dao.php';
 		$dao = new Dao();
 		$id = $_SESSION['username'];
-		$dog = $dao->getUserPurchase($dog);
-		$cost = $dao->getUserPurchase($cost);
+		$dog = $dao->getUserPurchase($dog, $cost);
+		$cost = $dao->getUserPurchase($dog, $cost);
 		?>
 		<div class="text_body">
 		<p>Congratulations!</p>
