@@ -54,11 +54,6 @@ User password:<br>
   <h1>Comments</h1>
     <h2 id="subtitle">Leave a review</h2>
 
-<?php 
-session_start();
-$message = isset($_SESSION['message']) ? $_SESSION['message'] : '';
-unset($_SESSION['message']);
-?>
 
     <form method="post" action="comment_handler.php" enctype="multipart/form-data">
 			Name:<br>
