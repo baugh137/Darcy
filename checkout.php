@@ -18,7 +18,7 @@
 		}
 		require_once 'Dao.php';
 		$dao = new Dao();
-		$id = $_SESSION['username'];
+		$username = $_SESSION['username'];
 		$dog = $dao->getUserPurchase($dog, $cost);
 		$cost = $dao->getUserPurchase($dog, $cost);
 		?>
