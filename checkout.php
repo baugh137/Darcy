@@ -27,11 +27,11 @@
 		<p>You have selected
 		<?php 
 			
-			 echo $dog;
+			 echo $dog['dog'];
 		 
 		 ?>  <br> He only costs 
 		 <?php
-		 echo $cost;
+		 echo $cost['cost'];
 		 ?>
 		 </p>
 		 
