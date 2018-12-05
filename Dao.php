@@ -10,9 +10,6 @@
 	return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
 	}
 	
-	public function __construct() {
-		$this->log = new KLogger("log.txt", KLogger::INFO);
-	}
 	
 	/*public function saveLogin($username, $userpassword){
 		$conn=$this->getConnection();
